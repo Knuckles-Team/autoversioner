@@ -20,12 +20,13 @@
 ![PyPI - Wheel](https://img.shields.io/pypi/wheel/autoversioner)
 ![PyPI - Implementation](https://img.shields.io/pypi/implementation/autoversioner)
 
-*Version: 24.1.0*
+*Version: 23.1.0*
 
 This handy module with auto increment the version and save that to a JSON or .env file
 
 Date versions get set to Year.Month.Revision
 
+23.12.4 -> 24.1.0
 2024.1.4 -> 2024.1.5
 
 Semantic versions get patched
