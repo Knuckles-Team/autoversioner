@@ -27,7 +27,9 @@ def version(current_version):
 
     if date_pattern.search(current_version):
         today = datetime.date.today()
-        date = today.strftime("%Y.%m")
+        year = today.strftime("%Y")
+        month = int(today.strftime("%m"))
+        date = f"{year}.{month}"
         new_version = f'{date}.0'
         if current_version == "":
             new_version = f'{date}.0'
