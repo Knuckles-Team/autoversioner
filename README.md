@@ -20,7 +20,7 @@
 ![PyPI - Wheel](https://img.shields.io/pypi/wheel/autoversioner)
 ![PyPI - Implementation](https://img.shields.io/pypi/implementation/autoversioner)
 
-*Version: 2024.5.0*
+*Version: 2024.6.0*
 
 This handy module with auto increment the version and save that to a JSON or .env file
 
