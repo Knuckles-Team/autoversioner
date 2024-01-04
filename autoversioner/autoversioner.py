@@ -70,8 +70,6 @@ def output(metadata=None, json_output=False, env_output=False, print_output=Fals
 def autoversioner(argv):
     current_version = '0.0.0'
     directory = ""
-    v_tag = ''
-    date = False
     environment_output = False
     json_output = False
     try:
