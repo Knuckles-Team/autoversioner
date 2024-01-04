@@ -30,19 +30,19 @@ def version(current_version):
         year = today.strftime("%Y")
         month = int(today.strftime("%m"))
         date = f"{year}.{month}"
-        new_version = f'{date}.0'
         if current_version == "":
             new_version = f'{date}.0'
         else:
             current_version = semantic_version.Version(current_version)
             s = semantic_version.SimpleSpec(f'<{date}.0')
+            new_version = f'{date}.0'
             if s.match(current_version):
                 new_version = f'{date}.0'
 
-            s = semantic_version.SimpleSpec(f'<={date}.{current_version.patch}')
+            s = semantic_version.SimpleSpec(f'=={date}.{current_version.patch}')
             if s.match(current_version):
-                current_version.next_patch()
-                new_version = f'{date}.{current_version.patch}'
+                new_version = current_version.next_patch()
+                new_version = f'{str(new_version)}'
         return new_version
     else:
         current_version = semantic_version.Version(current_version)
