@@ -26,12 +26,13 @@ This handy module with auto increment the version and save that to a JSON or .en
 
 Date versions get set to Year.Month.Revision
 
-23.12.4 -> 24.1.0
-2024.1.4 -> 2024.1.5
+- 23.12.4 -> 24.1.0
+
+- 2024.1.4 -> 2024.1.5
 
 Semantic versions get patched
 
-1.1.1 -> 1.1.2
+- 1.1.1 -> 1.1.2
 
 <details>
   <summary><b>Usage:</b></summary>
