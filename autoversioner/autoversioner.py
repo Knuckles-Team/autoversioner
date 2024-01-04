@@ -23,24 +23,38 @@ def usage():
 
 
 def version(current_version):
-    date_pattern = re.compile(r'20[1-2][0-9]')
+    long_date_pattern = re.compile(r'20[1-2][0-9]')
+    short_date_pattern = re.compile(r'^[1-2][0-9]')
     today = datetime.date.today()
-    year = today.strftime("%Y")
+    long_year = today.strftime("%Y")
+    short_year = today.strftime("%y")
     month = int(today.strftime("%m"))
-    date = f"{year}.{month}"
-    if date_pattern.search(current_version):
+    long_date = f"{long_year}.{month}"
+    short_date = f"{short_year}.{month}"
+    if long_date_pattern.search(current_version):
         current_version = semantic_version.Version(current_version)
-        s = semantic_version.SimpleSpec(f'<{date}.0')
-        new_version = f'{date}.0'
+        s = semantic_version.SimpleSpec(f'<{long_date}.0')
+        new_version = f'{long_date}.0'
         if s.match(current_version):
-            new_version = f'{date}.0'
-        s = semantic_version.SimpleSpec(f'=={date}.{current_version.patch}')
+            new_version = f'{long_date}.0'
+        s = semantic_version.SimpleSpec(f'=={long_date}.{current_version.patch}')
+        if s.match(current_version):
+            new_version = current_version.next_patch()
+            new_version = f'{str(new_version)}'
+        return new_version
+    if short_date_pattern.search(current_version):
+        current_version = semantic_version.Version(current_version)
+        s = semantic_version.SimpleSpec(f'<{short_date}.0')
+        new_version = f'{short_date}.0'
+        if s.match(current_version):
+            new_version = f'{short_date}.0'
+        s = semantic_version.SimpleSpec(f'=={short_date}.{current_version.patch}')
         if s.match(current_version):
             new_version = current_version.next_patch()
             new_version = f'{str(new_version)}'
         return new_version
     elif current_version == "":
-        new_version = f'{date}.0'
+        new_version = f'{short_date}.0'
         return new_version
     else:
         current_version = semantic_version.Version(current_version)
