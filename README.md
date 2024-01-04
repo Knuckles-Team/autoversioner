@@ -24,7 +24,7 @@
 
 This handy module with auto increment the version and save that to a JSON or .env file
 
-Date versions get set to Year.Month.Revision
+Date versions get set to current Year.Month.Revision
 
 - 23.12.4 -> 24.1.0
 
