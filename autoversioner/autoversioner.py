@@ -87,8 +87,8 @@ def output(metadata=None, json_output=False, env_output=False, print_output=Fals
         with open(json_file_path, 'w') as json_file:
             json.dump(metadata, json_file, indent=2)
     if env_output:
-        metadata =  {k.upper(): v for k, v in metadata.items()}
-        env_content = "\n".join([f"{key}={value}" for key, value in metadata.items()])
+        env_metadata = {k.upper(): v for k, v in metadata.items()}
+        env_content = "\n".join([f"{key}={value}" for key, value in env_metadata.items()])
         env_file_path = os.path.join(directory, '.env')
         # Save the content to the .env file
         with open(env_file_path, 'w') as env_file:
