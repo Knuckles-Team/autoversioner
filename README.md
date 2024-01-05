@@ -44,6 +44,9 @@ Semantic versions get patched
 | -j         | --json      | Export to JSON file                     |
 | -d         | --directory | Choose directory of .env and JSON files |
 | -v         | --version   | Semantic version input                  |
+|            | --major     | Increment major version                 |
+|            | --minor     | Increment minor version                 |
+|            | --patch     | Patch version                           |
 
 </details>
 
