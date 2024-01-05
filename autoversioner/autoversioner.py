@@ -26,6 +26,21 @@ def usage():
 
 
 def version(current_version="", major=False, minor=False, patch=False):
+    cleaned_current_version = current_version.split(".")
+    cleaned_current_version = cleaned_current_version[:3]
+    try:
+        cleaned_current_version[0] = str(int(cleaned_current_version[0]))
+    except Exception as e:
+        print(f"Unable to convert major version to int. Error: {e}")
+    try:
+        cleaned_current_version[1] = str(int(cleaned_current_version[1]))
+    except Exception as e:
+        print(f"Unable to convert minor version to int. Error: {e}")
+    try:
+        cleaned_current_version[2] = str(int(cleaned_current_version[2]))
+    except Exception as e:
+        print(f"Unable to convert patch version to int. Error: {e}")
+    current_version = ".".join(cleaned_current_version)
     if major:
         current_version = semantic_version.Version(current_version)
         new_version = current_version.next_major()
