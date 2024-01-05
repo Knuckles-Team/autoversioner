@@ -107,7 +107,7 @@ def autoversioner(argv):
     patch = False
     try:
         opts, args = getopt.getopt(argv, "hejd:v:", ["help", "env", "json", "directory=", "version=",
-                                                     "major=", "minor=", "patch="])
+                                                     "major", "minor", "patch"])
     except getopt.GetoptError:
         usage()
         sys.exit(2)
