@@ -37,16 +37,16 @@ Semantic versions get patched
 <details>
   <summary><b>Usage:</b></summary>
 
-| Short Flag | Long Flag   | Description                             |
-|------------|-------------|-----------------------------------------|
-| -h         | --help      | See Usage                               |
-| -e         | --env       | Export to .env file                     |
-| -j         | --json      | Export to JSON file                     |
-| -d         | --directory | Choose directory of .env and JSON files |
-| -v         | --version   | Semantic version input                  |
-|            | --major     | Increment major version                 |
-|            | --minor     | Increment minor version                 |
-|            | --patch     | Patch version                           |
+| Short Flag | Long Flag   | Description                                   |
+|------------|-------------|-----------------------------------------------|
+| -h         | --help      | See Usage                                     |
+| -e         | --env       | Export to .env file (/directory/.env)         |
+| -j         | --json      | Export to JSON file (/directory/version.json) |
+| -d         | --directory | Choose directory of .env and JSON files       |
+| -v         | --version   | Semantic version input                        |
+|            | --major     | Increment major version                       |
+|            | --minor     | Increment minor version                       |
+|            | --patch     | Patch version                                 |
 
 </details>
 

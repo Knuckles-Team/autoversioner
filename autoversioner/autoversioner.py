@@ -13,8 +13,8 @@ import json
 def usage():
     print(f"Usage: \n"
           f"-h | --help      [ See usage for script ]\n"
-          f"-e | --env       [ Export version metadata to environment file ]\n"
-          f"-j | --json      [ Export version metadata to JSON file ]\n"
+          f"-e | --env       [ Export version metadata to environment file (/directory/.env) ]\n"
+          f"-j | --json      [ Export version metadata to JSON file (/directory/version.json) ]\n"
           f"-d | --directory [ Directory to save .env and JSON files ]\n"
           f"--major          [ Increment major version ]\n"
           f"--minor          [ Increment minor version ]\n"
@@ -98,7 +98,7 @@ def output(metadata=None, json_output=False, env_output=False, print_output=Fals
 
 
 def autoversioner(argv):
-    current_version = '0.0.0'
+    current_version = '1.0.0'
     directory = ""
     environment_output = False
     json_output = False
